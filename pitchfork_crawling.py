@@ -1,14 +1,10 @@
-#!/usr/bin/env python
-
-# Scrapes the Pitchfork /albums/review pages for the URLs to each reviewed album
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 import json
 
-# don't mess with these variables
-delay = 1 # time to wait on each page load before reading the page
-driver = webdriver.Safari() # options are Chrome(), Safari(), Firefox()
+delay = 1
+driver = webdriver.Safari() # Chrome(), Safari(), Firefox()
 urls = []
 album_selector = 'div.review'
 url_selector = '.review a.review__link'
@@ -22,7 +18,7 @@ def test_url(page_number):
     page = str(page_number)
     return base_url + page
 
-while page_counter <= 59: # change this as appropriate -- on 05/23/2019 there were roughly 1779 album review pages
+while page_counter <= 59: # pages
     url = test_url(page_counter)
     print(url)
     driver.get(url)

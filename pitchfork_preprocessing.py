@@ -1,17 +1,10 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-#pulls every album review listed in the scrape-output input file (this file comes from the url_scrape code)
-#a fair warning -- if you are generating a dataset of the entire Pitchfork corpus, expect it to take several days
-
 from time import sleep
 import json
 import csv
 import urllib
 import urllib.request as ur
 
-# don't mess with these variables
-delay = 5 # time to wait on each page load before reading the page
+delay = 5
 
 with open('scrape-output-1.json', 'r') as f:
     x = 0
